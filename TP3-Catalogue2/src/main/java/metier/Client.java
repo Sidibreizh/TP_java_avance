@@ -8,6 +8,7 @@ package metier;
  *
  * @author Alix
  */
-public class Client {
+public class Client
+{
     
 }

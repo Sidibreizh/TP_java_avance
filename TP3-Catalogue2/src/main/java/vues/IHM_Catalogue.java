@@ -4,16 +4,29 @@
  */
 package vues;
 
+import java.util.List;
+import javax.swing.ComboBoxModel;
+import javax.swing.DefaultComboBoxModel;
+import metier.Categorie;
+import metier.Produit;
+
 /**
  *
- * @author Sidi Breizh
+ * @author Elyes - Alix
  */
 public class IHM_Catalogue extends javax.swing.JFrame {
 
     /**
      * Creates new form IHM_Catalogue
      */
-    public IHM_Catalogue() {
+    public IHM_Catalogue()
+    {
+        lesProduits.add(new Produit("Croquettes RC", "Pour chats à boules de poils exigeantes", 89.99, "https://shop-cdn-m.mediazs.com/bilder/royal/canin/appetite/control/care/pour/chat/2/140/rc_spt_dry_appetctrl_page_1_2.jpg"));
+        lesProduits.add(new Produit("Litière Agglomérante Tiger", "Sans parfum histoire que ça ne couvre pas les odeurs", 9.99, "https://shop-cdn-m.mediazs.com/bilder/litire/tigerino/canada/style/sensitive/pour/chat/7/400/tigerino_canada_sensitive_12kg_1000x1000_7.jpg"));
+        lesProduits.add(new Produit("Balle à grelot", "Parce que si ça ne fait pas de bruit, ce n'est pas drôle", 6.99, "https://shop-cdn-m.mediazs.com/bilder/balles/de/tennis/kong/active/avec/grelot/pour/chat/6/140/224516_kong_activekatze_tennisballe_glocken_hs_04_9_6.jpg"));
+        lesProduits.add(new Produit("Pince à griffes", "En espérant que vous sauverez ce qu'il reste de votre canapé", 7.99, "https://media.mediazs.com/bilder/1/140/1479_trixie_krallenzange_1.jpg"));
+        
+        modeleDesCategories = new DefaultComboBoxModel(Categorie.tabCategories);
         initComponents();
     }
 
@@ -132,7 +145,16 @@ public class IHM_Catalogue extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jSeparator2 = new javax.swing.JPopupMenu.Separator();
+        jMenuItem5 = new javax.swing.JMenuItem();
+        jSeparator3 = new javax.swing.JPopupMenu.Separator();
+        jMenuItem6 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        jMenuItem7 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -1070,9 +1092,34 @@ public class IHM_Catalogue extends javax.swing.JFrame {
         getContentPane().add(tabPCPC, java.awt.BorderLayout.PAGE_START);
 
         jMenu1.setText("Fichier");
+
+        jMenuItem1.setText("Gestion Catégories");
+        jMenu1.add(jMenuItem1);
+
+        jMenuItem2.setText("Gestion des Promotions");
+        jMenu1.add(jMenuItem2);
+
+        jMenuItem3.setText("Gestion des Clients");
+        jMenu1.add(jMenuItem3);
+
+        jMenuItem4.setText("Charger...");
+        jMenu1.add(jMenuItem4);
+        jMenu1.add(jSeparator2);
+
+        jMenuItem5.setText("Sauvegarder...");
+        jMenu1.add(jMenuItem5);
+        jMenu1.add(jSeparator3);
+
+        jMenuItem6.setText("Quitter");
+        jMenu1.add(jMenuItem6);
+
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("A propos ...");
+
+        jMenuItem7.setText("Version");
+        jMenu2.add(jMenuItem7);
+
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
@@ -1179,6 +1226,10 @@ public class IHM_Catalogue extends javax.swing.JFrame {
         });
     }
 
+    private static List<Produit> lesProduits;
+    private ComboBoxModel<String> modeleDesCategories;
+    private ComboBoxModel<String> modeleDesSousCat;
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButCreerCat;
     private javax.swing.JButton ButCreerSsCat;
@@ -1235,6 +1286,13 @@ public class IHM_Catalogue extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -1246,6 +1304,8 @@ public class IHM_Catalogue extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JPopupMenu.Separator jSeparator2;
+    private javax.swing.JPopupMenu.Separator jSeparator3;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField1;

@@ -8,6 +8,7 @@ package metier;
  *
  * @author Alix
  */
-public class Promotion {
+public class Promotion
+{
     
 }
